@@ -25,9 +25,10 @@ export default function RootLayout({
     <ClerkProvider>
 
       <html lang="en">
-        <body
+        <body className="min-h-screen flex"
         >
           {children}
+          {/* toaster */}
         </body>
       </html>
     </ClerkProvider>
