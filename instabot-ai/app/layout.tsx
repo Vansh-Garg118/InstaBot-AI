@@ -8,6 +8,7 @@ import {
   UserButton
 } from '@clerk/nextjs'
 import "./globals.css";
+import ApolloProviderWraper from "@/components/ApolloProvider";
 
 
 
@@ -22,15 +23,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ApolloProviderWraper>
 
-      <html lang="en">
-        <body className="min-h-screen flex"
-        >
-          {children}
-          {/* toaster */}
-        </body>
-      </html>
-    </ClerkProvider>
+      <ClerkProvider>
+
+        <html lang="en">
+          <body className="min-h-screen flex"
+          >
+            {children}
+            {/* toaster */}
+          </body>
+        </html>
+      </ClerkProvider>
+    </ApolloProviderWraper>
   );
 }
